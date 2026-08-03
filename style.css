@@ -55,7 +55,7 @@ nav a {
     transition: all 0.3s ease;
 }
 
-/* Interactive States: Nav Links */
+
 nav a:hover,
 nav a:focus {
     color: #facc15;
@@ -73,7 +73,7 @@ section {
     gap: 20px;
 }
 
-/* Grid layout fix for the projects section header */
+
 #projects h2 {
     grid-column: 1 / -1;
     margin-bottom: 10px;
@@ -88,7 +88,7 @@ article {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Interactive State: Card Lift Effect */
+
 article:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
@@ -120,7 +120,7 @@ textarea {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Interactive State: Input Focus */
+
 input:focus,
 textarea:focus {
     outline: none;
@@ -137,11 +137,11 @@ button {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    /* CSS Transition */
+    
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-/* Interactive States: Button */
+
 button:hover {
     background: #1d4ed8;
 }
@@ -163,7 +163,7 @@ footer {
     margin-top: 40px;
 }
 
-/* Responsive Media Queries */
+
 @media (max-width: 768px) {
     section {
         padding: 30px 5%;
@@ -205,5 +205,186 @@ footer {
     textarea,
     button {
         width: 100%;
+    }
+}
+
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+#home article {
+    text-align: center;
+}
+
+
+.project-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.contact-info p {
+    margin-top: 10px;
+}
+
+.contact-info a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #facc15;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.header-img:hover {
+    transform: scale(1.1);
+}
+
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-btn {
+    display: inline-block;
+    margin-top: 18px;
+    align-self: flex-start;
+    padding: 10px 18px;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+.project-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(29, 78, 216, 0.4);
+}
+
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #eff6ff;
+    transform: translateX(5px);
+}
+
+.contact-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.contact-link,
+.contact-value {
+    color: #1e293b;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.contact-link {
+    color: #2563eb;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-brand {
+        flex-direction: column;
+        gap: 8px;
     }
 }
