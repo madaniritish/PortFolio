@@ -388,3 +388,59 @@ footer {
         gap: 8px;
     }
 }
+/* ==========================================
+   Skills Pill Cards (Option 1: Clean Light)
+   ========================================== */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skills-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 22px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.skills-card:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
+}
+
+.skills-card h3 {
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.skills-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: #eff6ff;
+    border: 1.5px solid #bfdbfe;
+    color: #1d4ed8;
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-badge:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
