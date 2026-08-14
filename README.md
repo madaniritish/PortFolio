@@ -1,40 +1,16 @@
-# Personal Portfolio Website
+# React + Vite
 
-Personal portfolio website built using HTML and CSS3 to showcase my background, technical skills, projects, and contact information through a clean and user-friendly interface.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-# Features
+Currently, two official plugins are available:
 
-- Responsive design for desktop, tablet, and mobile devices
-- Smooth scrolling navigation
-- Project showcase with GitHub links
-- About Me and Skills section
-- Contact information and message form
-- CSS animations, transitions, and hover effects
-- Semantic HTML structure for improved accessibility
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-# Design Rationale
+## React Compiler
 
-The portfolio was designed with simplicity and readability as the primary goals. A minimal color palette with blue and white tones provides a professional appearance
-while keeping the focus on the content. Sections are organized in a logical order, allowing visitors to quickly navigate from the introduction to projects and contact details. 
-Interactive elements such as hover animations, buttons, and cards improve user experience without overwhelming the interface. 
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-The most challenging part of the project was refining the CSS layout and responsiveness, which required multiple iterations to achieve consistent spacing,
-alignment, and behavior across different screen sizes.
+## Expanding the ESLint configuration
 
-## Layout Technique Justification
-
-The website uses Flexbox for navigation bars, headers, and content alignment because it efficiently handles one-dimensional layouts and responsive positioning.
-CSS Grid is used in the Projects and Contact sections to create structured, responsive multi-column layouts that automatically adapt to different screen widths through media queries.
-This combination provides a clean, maintainable, and scalable design.
-
-## Known Limitations
-
-- Contact form is currently static and does not submit data.
-- Projects are manually added rather than generated dynamically.
-- No JavaScript functionality has been implemented yet.
-- Dark mode and advanced accessibility features are not currently included.
-
-#Technologies Used
-
-- HTML
-- CSS
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
