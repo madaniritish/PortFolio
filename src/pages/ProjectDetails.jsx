@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
-import TechBadgeList from '../components/TechBadgeList';
+import TechStack from '../components/TechStack';
 
 function ProjectDetails() {
   const { projectId } = useParams();
@@ -12,7 +12,7 @@ function ProjectDetails() {
         <article>
           <Link to="/projects" className="back-link">&larr; Back to Projects</Link>
           <h2>Project Not Found</h2>
-          <p>The project with ID "{projectId}" does not exist.</p>
+          <p>The project with ID &quot;{projectId}&quot; does not exist.</p>
         </article>
       </section>
     );
@@ -33,8 +33,19 @@ function ProjectDetails() {
         )}
         <p style={{ fontSize: '1.1rem', marginBottom: '20px' }}>{project.description}</p>
         
-        <h3>Technologies Used</h3>
-        <TechBadgeList techStack={project.techStack} />
+        {project.highlights && project.highlights.length > 0 && (
+          <div style={{ marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '1.15rem', marginBottom: '8px' }}>Key Highlights</h3>
+            <ul style={{ paddingLeft: '20px' }}>
+              {project.highlights.map((highlight, index) => (
+                <li key={index} style={{ marginBottom: '4px' }}>{highlight}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <h3 style={{ fontSize: '1.15rem', marginBottom: '8px' }}>Technologies Used</h3>
+        <TechStack techStack={project.techStack} />
 
         <div style={{ marginTop: '24px' }}>
           {project.link && (

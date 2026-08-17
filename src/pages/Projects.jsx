@@ -1,23 +1,12 @@
 import { projects } from '../data/projects';
-import ProjectCard from '../components/ProjectCard';
+import ProjectList from '../components/ProjectList';
 
 function Projects() {
   return (
     <section id="projects-page">
       <h2>Projects</h2>
-      <div className="projects-grid">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            id={project.id}
-            title={project.title}
-            description={project.description}
-            techStack={project.techStack}
-            image={project.image}
-            link={project.link}
-          />
-        ))}
-      </div>
+      {/* Level 1 of Prop Drilling: Passing projects array to ProjectList */}
+      <ProjectList projects={projects} />
     </section>
   );
 }

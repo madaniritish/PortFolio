@@ -6,7 +6,12 @@ export const projects = [
       "Developed a responsive full-stack Healthcare Queue Management System for a college health center using the MERN stack, replacing manual patient queues with a digital queue and appointment management system.",
     techStack: ["React", "Node.js", "Express.js", "MongoDB", "MERN"],
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
-    link: "https://github.com/madaniritish/dqms_adv"
+    link: "https://github.com/madaniritish/dqms_adv",
+    highlights: [
+      "Real-time patient queue and token management",
+      "Role-based doctor consultation workflow",
+      "Automated appointment scheduling system"
+    ]
   },
   {
     id: "stay-nest",
@@ -15,7 +20,12 @@ export const projects = [
       "A responsive full-stack Rental platform for listing and booking short-term properties, providing seamless interaction between guests searching for stays and property hosts managing listings.",
     techStack: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80",
-    link: "https://github.com/madaniritish/StayNest"
+    link: "https://github.com/madaniritish/StayNest",
+    highlights: [
+      "Dynamic search and filtering for listings",
+      "Host dashboard for property & reservation management",
+      "Mobile-friendly interface and review system"
+    ]
   },
   {
     id: "ai-compiler-diagnosis",
@@ -24,6 +34,11 @@ export const projects = [
       "AI-driven debugging system that analyzes complex compiler error messages alongside source code structures (ASTs) to deliver human-readable explanations and actionable code patches.",
     techStack: ["Python", "AI/ML", "AST Parsing", "LLM APIs"],
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
-    link: "https://github.com/madaniritish/Compiler-Error-Diagnosis-System"
+    link: "https://github.com/madaniritish/Compiler-Error-Diagnosis-System",
+    highlights: [
+      "Deep AST syntax tree code analysis",
+      "Plain English bug explanation engine",
+      "Actionable code patch generation"
+    ]
   }
 ];

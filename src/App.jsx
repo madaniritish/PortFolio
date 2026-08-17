@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -9,10 +10,24 @@ import NotFound from './pages/NotFound';
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? savedTheme : 'light';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout theme={theme} toggleTheme={toggleTheme} />}>
           <Route index element={<Navigate to="/Home" replace />} />
           <Route path="Home" element={<Home />} />
           <Route path="about" element={<About />} />
@@ -20,7 +35,6 @@ function App() {
           <Route path="projects/:projectId" element={<ProjectDetails />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
-          
         </Route>
       </Routes>
     </BrowserRouter>
