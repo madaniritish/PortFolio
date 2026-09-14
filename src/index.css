@@ -487,6 +487,20 @@ button:disabled {
     gap: 8px;
 }
 
+.error-banner {
+    padding: 14px 18px;
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 /* Footer */
 footer {
     background: #1e293b;
@@ -691,6 +705,12 @@ footer {
     background-color: #064e3b;
     color: #a7f3d0;
     border-color: #059669;
+}
+
+[data-theme="dark"] .error-banner {
+    background-color: #450a0a;
+    color: #fca5a5;
+    border-color: #991b1b;
 }
 
 /* Responsive Breakpoints */

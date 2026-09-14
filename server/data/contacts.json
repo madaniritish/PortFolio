@@ -1,0 +1,16 @@
+[
+  {
+    "id": "a77e1618-4d02-4db8-88f1-33ecf7567475",
+    "name": "Ritish Madani",
+    "email": "ritish@example.com",
+    "message": "Testing the backend API integration for Assignment 3.",
+    "createdAt": "2026-09-14T07:21:29.272Z"
+  },
+  {
+    "id": "040bf271-5dbc-42fb-b6ef-10a9d34c22a8",
+    "name": "ritish",
+    "email": "mr24csb0a40@student.nitw.ac.in",
+    "message": "Hello!",
+    "createdAt": "2026-09-14T17:05:33.804Z"
+  }
+]

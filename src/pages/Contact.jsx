@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -9,6 +11,8 @@ function Contact() {
 
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [serverError, setServerError] = useState('');
 
   const validate = (data) => {
     const errs = {};
@@ -33,6 +37,8 @@ function Contact() {
     const { name, value } = e.target;
     const updatedData = { ...formData, [name]: value };
     setFormData(updatedData);
+    setServerError('');
+    setIsSubmitted(false);
 
     // Validate in real time
     const validationErrors = validate(updatedData);
@@ -45,23 +51,49 @@ function Contact() {
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim()) &&
     formData.message.trim() !== '';
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const validationErrors = validate(formData);
+    setServerError('');
+    setIsSubmitted(false);
 
+    const validationErrors = validate(formData);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
-    // Successful submission (mocked without backend API call)
-    setIsSubmitted(true);
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-    setErrors({});
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (response.status === 201) {
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+        setErrors({});
+        setServerError('');
+      } else {
+        // Display actual server-provided error to the user
+        setServerError(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (err) {
+      console.error('Submission error:', err);
+      setServerError('Unable to connect to the server. Please check your connection or try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -101,7 +133,13 @@ function Contact() {
 
           {isSubmitted && (
             <div className="success-message" role="status" aria-live="polite">
-              ✓ Thank you! Your message has been sent successfully.
+              ✓ Message sent successfully!
+            </div>
+          )}
+
+          {serverError && (
+            <div className="error-banner" role="alert" aria-live="assertive">
+              ✕ {serverError}
             </div>
           )}
 
@@ -169,8 +207,8 @@ function Contact() {
               )}
             </div>
 
-            <button type="submit" disabled={!isFormValid}>
-              Send Message
+            <button type="submit" disabled={isSubmitting || !isFormValid}>
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </article>
